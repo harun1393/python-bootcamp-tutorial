@@ -61,7 +61,7 @@ def author_create(request):
             form = AuthorForm(request.POST)
 
             if form.is_valid():
-                author.save()
+                form.save()
                 messages.add_message(request, messages.INFO, "Author instance saved")
                 return redirect("author-list")
         except:
