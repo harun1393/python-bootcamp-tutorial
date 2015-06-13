@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+{% block content %}
+<h1>Python {{name}}</h1>
+
+<ul>
+{% if show_teachers %}
+    {% for i in teachers %}
+        <li>{{ i }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+    Sorry, you are not allowed to view teacher list
+{% endif %}
+{% endblock %}
