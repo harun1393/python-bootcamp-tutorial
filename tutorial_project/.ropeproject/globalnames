@@ -1,5 +1,6 @@
-€}q(Ututorial_project.settings]q(UUSE_L10NqUSTATIC_ROOTqULANGUAGE_CODEqUUSE_TZqUUSE_I18NqU	DATABASESqU	TIME_ZONEq	U
-STATIC_URLq
-UROOT_URLCONFqUTEMPLATE_DEBUGqUWSGI_APPLICATIONqUMIDDLEWARE_CLASSESqUDEBUGqUALLOWED_HOSTSqU
-SECRET_KEYqUINSTALLED_APPSqUBASE_DIRqeUtutorial_project.urls]qUurlpatternsqaUblog.models]q(UCommentqUAuthorqUBlogqUTagqUPostqeU	blog.urls]qhaU
-blog.views]q(U	tpl_helloqUrequest_dumpqUgood_byeq Ureverserq!Uhelloq"eu.
+€}q(Ututorial_project.urls]qUurlpatternsqaUblog.models]q(UCommentqUAuthorqUBlogqUTagqUPostq	eU	blog.urls]q
+UurlpatternsqaU
+blog.admin]q(UCommentAdminqUTagAdminqU	BlogAdminqU	PostAdminqUAuthorAdminqeUtutorial_project.settings]q(UUSE_L10NqUSTATIC_ROOTqULANGUAGE_CODEqUUSE_TZqUUSE_I18NqU	DATABASESqU	TIME_ZONEqU
+STATIC_URLqUROOT_URLCONFqUTEMPLATE_DEBUGqUWSGI_APPLICATIONqUMIDDLEWARE_CLASSESqUDEBUGqUALLOWED_HOSTSq U
+SECRET_KEYq!UINSTALLED_APPSq"UBASE_DIRq#eU
+blog.views]q$(U	tpl_helloq%Uauthor_deleteq&Urequest_dumpq'Ugood_byeq(Uauthor_listq)Uauthor_detailq*Ureverserq+Uhelloq,eu.

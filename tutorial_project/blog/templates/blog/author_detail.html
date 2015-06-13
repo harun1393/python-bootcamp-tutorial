@@ -1,0 +1,22 @@
+{% extends "base/base.html" %}
+{% block content %}
+<h4>Detail Information of {{object}}</h4>
+<table class="table table-condensed table-striped">
+    <tr>
+        <th>First Name</th>
+        <td>{{object.first_name}}</td>
+    </tr>
+    <tr>
+        <th>Last Name</th>
+        <td>{{object.last_name}}</td>
+    </tr>
+    <tr>
+        <th>Date of Birth</th>
+        <td>{{object.dob}}</td>
+    </tr>
+    <tr>
+        <th>Bio</th>
+        <td>{{object.bio}}</td>
+    </tr>
+</table>
+{% endblock %}
