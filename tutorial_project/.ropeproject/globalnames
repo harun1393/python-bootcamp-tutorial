@@ -3,4 +3,6 @@ UurlpatternsqaU
 blog.admin]q(UCommentAdminqUTagAdminqU	BlogAdminqU	PostAdminqUAuthorAdminqeUtutorial_project.settings]q(UUSE_L10NqUSTATIC_ROOTqULANGUAGE_CODEqUUSE_TZqUUSE_I18NqU	DATABASESqU	TIME_ZONEqU
 STATIC_URLqUROOT_URLCONFqUTEMPLATE_DEBUGqUWSGI_APPLICATIONqUMIDDLEWARE_CLASSESqUDEBUGqUALLOWED_HOSTSq U
 SECRET_KEYq!UINSTALLED_APPSq"UBASE_DIRq#eU
-blog.views]q$(U	tpl_helloq%Uauthor_deleteq&Urequest_dumpq'Ugood_byeq(Uauthor_listq)Uauthor_detailq*Ureverserq+Uhelloq,eu.
+blog.forms]q$U
+AuthorFormq%aU
+blog.views]q&(U	tpl_helloq'Uauthor_updateq(Uauthor_deleteq)Ureverserq*Ugood_byeq+Uauthor_createq,Uauthor_listq-Uauthor_detailq.Urequest_dumpq/Uhelloq0eu.

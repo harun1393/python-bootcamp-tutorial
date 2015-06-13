@@ -8,7 +8,10 @@ urlpatterns = patterns('',
     url(r'^reverser/$', 'blog.views.reverser'),
     ##
     url(r'^tpl/hello/$', 'blog.views.tpl_hello'),
+    ##
     url(r'^author/$', 'blog.views.author_list', name='author-list'),
-    url(r'^author/detail/$', 'blog.views.author_detail', name='author-detail'),
-    url(r'^author/delete/$', 'blog.views.author_delete', name='author-delete'),
+    url(r'^author/create/$', 'blog.views.author_create', name='author-create'),
+    url(r'^author/update/(?P<pk>[0-9]+)/$', 'blog.views.author_update', name='author-update'),
+    url(r'^author/detail/(?P<pk>[0-9]+)/$', 'blog.views.author_detail', name='author-detail'),
+    url(r'^author/delete/(?P<pk>[0-9]+)/$', 'blog.views.author_delete', name='author-delete'),
 )

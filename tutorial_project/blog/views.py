@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib import messages
 
 from .models import *
+from .forms import *
 
 
 def hello(request):
@@ -50,20 +52,52 @@ def author_list(request):
     return render(request, template_name, {"object_list": authors})
 
 
-def author_detail(request):
-    pk = request.GET.get("author")
+def author_create(request):
+    form = AuthorForm()
+    template_name = "blog/author_form.html"
 
+    if request.method == 'POST':
+        try:
+            form = AuthorForm(request.POST)
+
+            if form.is_valid():
+                author.save()
+                messages.add_message(request, messages.INFO, "Author instance saved")
+                return redirect("author-list")
+        except:
+            return render(request, template_name, {"form": form})
+
+    return render(request, template_name, {"form": form})
+
+
+def author_update(request, pk):
+    author = Author.objects.get(id=pk)
+    form = AuthorForm(instance=author)
+
+    if request.method == "POST":
+        form = AuthorForm(request.POST, instance=author)
+
+        if form.is_valid():
+            try:
+                form.save()
+                messages.add_message(request, messages.INFO, "Author Updated Successfully")
+                return redirect('author-list')
+            except:
+                messages.add_message(request, messages.INFO, "An error occured")
+                return render(request, "blog/author_form.html", {"form": AuthorForm(instance=author)})
+
+    return render(request, "blog/author_form.html", {"form": form})
+
+def author_detail(request, pk):
     author_object = Author.objects.get(pk=pk)
 
     return render(request, "blog/author_detail.html", {"object": author_object})
 
 
-def author_delete(request):
-    pk = request.GET.get("author")
-
+def author_delete(request, pk):
     author_object = Author.objects.get(pk=pk)
     author_object.delete()
+    messages.add_message(request, messages.INFO, "Author was successfully deleted")
+    return redirect("author-list")
 
-    return render(request, "blog/author_list.html")
-    #return render(request, "blog/author_detail.html", {"object": author_object})
 

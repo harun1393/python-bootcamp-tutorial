@@ -1,25 +1,53 @@
 {% extends "base/base.html" %}
+{% block extracss %}
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+{% endblock %}
 
 {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col col-md-12">
 <h4>Author List</h4>
-<table class="table table-striped table-bordered table-condensed table-hover">
+<hr />
+<div class="well well-sm">
+    <a class="btn btn-info btn-sm pull-right" href="{% url 'author-create' %}">Add Author</a>
+    <div class="clearfix"></div>
+</div>
+<table id='id-author-list'
+       class="table table-striped table-bordered table-condensed table-hover">
+       <thead>
     <tr>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Date of Birth</th>
         <th>Actions</th>
     </tr>
+        </thead>
+        <tbody>
 {% for obj in object_list %}
     <tr>
         <td>{{obj.first_name}}</td>
         <td>{{obj.last_name}}</td>
         <td>{{obj.dob}}</td>
         <th>
-            <a href="{% url 'author-detail' %}?author={{obj.pk}}">View</a>
-             | 
-             <a href="{% url 'author-delete' %}?author={{obj.pk}}">Delete</a>
+            <a href="{% url 'author-detail' obj.pk %}">View</a> 
+            <a href="{% url 'author-update' obj.pk %}">Update</a> 
+            <a href="{% url 'author-delete' obj.pk %}">Delete</a>
         </th>
     </tr>
 {% endfor %}
+    </tbody>
 </table>
+</div>
+</div>
+</div>
+{% endblock %}
+
+{% block extrajs %}
+<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+    $('#id-author-list').DataTable();
+});
+</script>
 {% endblock %}
