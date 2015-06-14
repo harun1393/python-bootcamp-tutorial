@@ -1,8 +1,9 @@
-€}q(Ututorial_project.urls]qUurlpatternsqaUblog.models]q(UCommentqUAuthorqUBlogqUTagqUPostq	eU	blog.urls]q
-UurlpatternsqaU
-blog.admin]q(UCommentAdminqUTagAdminqU	BlogAdminqU	PostAdminqUAuthorAdminqeUtutorial_project.settings]q(UUSE_L10NqUSTATIC_ROOTqULANGUAGE_CODEqUUSE_TZqUUSE_I18NqU	DATABASESqU	TIME_ZONEqU
-STATIC_URLqUROOT_URLCONFqUTEMPLATE_DEBUGqUWSGI_APPLICATIONqUMIDDLEWARE_CLASSESqUDEBUGqUALLOWED_HOSTSq U
-SECRET_KEYq!UINSTALLED_APPSq"UBASE_DIRq#eU
-blog.forms]q$U
-AuthorFormq%aU
-blog.views]q&(U	tpl_helloq'Uauthor_updateq(Uauthor_deleteq)Ureverserq*Ugood_byeq+Uauthor_createq,Uauthor_listq-Uauthor_detailq.Urequest_dumpq/Uhelloq0eu.
+€}q(Ututorial_project.urls]qUurlpatternsqaUblog.models]q(UCommentqUAuthorqUBlogActivityqUBlogqUTagq	U	BaseModelq
+UPostqeU	blog.urls]q(UurlpatternsqUrouterqeU
+blog.admin]q(UCommentAdminqUTagAdminqU	BlogAdminqU	PostAdminqUAuthorAdminqeUtutorial_project.settings]q(UUSE_L10NqUSTATIC_ROOTqULANGUAGE_CODEqUUSE_TZqUUSE_I18NqU	DATABASESqU	TIME_ZONEqU
+STATIC_URLqUROOT_URLCONFqUTEMPLATE_DEBUGqUWSGI_APPLICATIONq UMIDDLEWARE_CLASSESq!UDEBUGq"UALLOWED_HOSTSq#U
+SECRET_KEYq$UINSTALLED_APPSq%UBASE_DIRq&eU
+blog.views]q'(U	tpl_helloq(Uauthor_updateq)Uauthor_deleteq*Ureverserq+Ugood_byeq,Uauthor_createq-Uauthor_listq.Uauthor_detailq/Urequest_dumpq0Uhelloq1eU
+blog.forms]q2U
+AuthorFormq3aUblog.api]q4(UCommentSerializerq5UCommentViewSetq6U
+TagViewSetq7UTagSerializerq8UBlogViewSetq9UAuthorWithoutBioSerializerq:UBlogSerializerq;UPostViewSetq<UAuthorViewSetq=UPostSerializerq>UAuthorSerializerq?eu.

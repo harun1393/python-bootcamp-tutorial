@@ -25,7 +25,13 @@
     {% block navigation %}
         {% include "base/navigation.html" %}
     {% endblock %}
-
+{% if form.non_field_errors %}
+  <div class="non-field-errors">
+    {% for err in form.non_field_errors %}
+      <p class="form-error">{{ err }}</p>
+    {% endfor %}
+  </div>
+{% endif %}
     {% if messages %}
     <div class="container">
         <div class="row">

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import *
 from .forms import *
@@ -52,6 +53,7 @@ def author_list(request):
     return render(request, template_name, {"object_list": authors})
 
 
+@login_required
 def author_create(request):
     form = AuthorForm()
     template_name = "blog/author_form.html"
@@ -62,6 +64,7 @@ def author_create(request):
 
             if form.is_valid():
                 form.save()
+
                 messages.add_message(request, messages.INFO, "Author instance saved")
                 return redirect("author-list")
         except:
@@ -70,6 +73,7 @@ def author_create(request):
     return render(request, template_name, {"form": form})
 
 
+@login_required
 def author_update(request, pk):
     author = Author.objects.get(id=pk)
     form = AuthorForm(instance=author)
@@ -80,6 +84,12 @@ def author_update(request, pk):
         if form.is_valid():
             try:
                 form.save()
+                author = form.instance
+
+                author.created_by = request.user
+                author.updated_by = request.user
+                author.save()
+
                 messages.add_message(request, messages.INFO, "Author Updated Successfully")
                 return redirect('author-list')
             except:
